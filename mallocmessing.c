@@ -36,9 +36,4 @@ int main() {
 		int a = scanf("%d",&numberOfProducts);
 		printf("%d\n", a);
 	}
-
-
-	
-
-
 }
