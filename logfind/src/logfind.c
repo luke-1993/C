@@ -115,6 +115,7 @@ char **match_lines(char *, int, char *[], int*);
 
 int num_lines(char *);
 
+void get_files(int, char*[]);
 /*============================================================================*
 
     Private Data

@@ -1,0 +1,10 @@
+
+flags = Split("""-std=gnu99 -Wall -Wextra -Werror -Wpedantic -Wmissing-prototypes 
+               -Wstrict-prototypes -g 
+               """)
+env = Environment(CPPPATH = '.',
+                  CFLAGS = flags)
+
+src = Glob('src/**/*.c') + Glob('src/*.c')
+
+env.Program('build/logfind', src)
