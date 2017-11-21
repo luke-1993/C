@@ -1,0 +1,13 @@
+flags = Split("""-std=c99 -Wall -Wextra -O2 -g
+               -Isrc -rdynamic
+               -DNDEBUG""")
+
+env = Environment(CPPPATH = '.',
+                  CFLAGS = flags)
+
+lib_src = Glob('src/*.c') + Glob('src/**/*.c')
+
+test_src = Glob('tests/*_tests.c')
+
+env.Library('build/ex29', lib_src)
+env.Program('tests/ex29_tests', test_src, LIBS=['ex29', 'dl'], LIBPATH='./build')
